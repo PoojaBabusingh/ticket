@@ -115,7 +115,12 @@
 				success: function (data) {
 					console.log(data);
                     if(un == "admin") {
-                        window.alert("enter valid user name or password")
+                        // window.alert("enter valid user name or password")
+                        $('#modal-message').find('#body-cont').text("enter valid user name or password");
+                        $('#modal-message').modal('show');
+						$('#un').val("");
+						$('#pwd').val("");
+						$('#un').focus();
                     } else {
 					if(data.valid == true){
 						window.location = "../reserved.php";
